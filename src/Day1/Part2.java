@@ -4,9 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-
-public class Part1 {
-
+public class Part2 {
     static void main() {
         try (BufferedReader br = new BufferedReader(new FileReader("src/Day1/operationList.txt"))) {
             String line;
@@ -15,9 +13,17 @@ public class Part1 {
 
             while ((line = br.readLine()) != null) {
 
-
                 int val = Integer.parseInt(line.substring(1)) % 100;
+                int numOfRotation = Integer.parseInt(line.substring(1)) / 100;
                 char dir = line.charAt(0);
+                count += numOfRotation;
+
+                if (dir == 'L' && val > starPoint && starPoint != 0) {
+                    count++;
+                }
+                if (dir == 'R' && val > 100 - starPoint) {
+                    count++;
+                }
 
                 starPoint = password(dir,val,starPoint);
                 if (starPoint == 0) {
@@ -53,5 +59,4 @@ public class Part1 {
         int reversePoint = 100;
         return reversePoint - a;
     }
-
 }
