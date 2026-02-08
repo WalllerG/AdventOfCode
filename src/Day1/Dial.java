@@ -1,46 +1,52 @@
 package Day1;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 
 public class Dial {
 
     public static void main(String[] args) {
-        int[][] operation = {{0,68},{0,30}, {1,48},{0,5},{1,60},{0,55},{0,1},{0,99},{1,14},{0,82}};
-        System.out.println(password(operation));
-    }
-    public static int password(int[][] operation) {
-        ArrayList<int[]> list = new ArrayList<> (Arrays.asList(operation));
-        int startPoint = 50;
-        int count = 0;
-        for (int i = 0; i<list.size();i++) {
-            int num = list.get(i)[1] % 100;
-            if (list.get(i)[0] == 0 && list.get(i)[1] % 100 <= startPoint) {
-                startPoint = startPoint - num;
-                if (startPoint == 0) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/Day1/operationList.txt"))) {
+            String line;
+            int count = 0;
+            int starPoint = 50;
+            // Read line by line until the end of the file
+            while ((line = br.readLine()) != null) {
+
+                line = line.trim(); // Remove hidden spaces or newline characters
+                int val = Integer.parseInt(line.substring(1)) % 100;
+                char dir = line.charAt(0);
+                // Execute your logic
+                starPoint = password(dir,val,starPoint);
+                if (starPoint == 0) {
                     count++;
                 }
             }
-            else if (list.get(i)[0] == 0 && list.get(i)[1] % 100 > startPoint) {
-                startPoint = convertLeft(num - startPoint);
-                if (startPoint == 0) {
-                    count++;
-                }
-            }
-            else if (list.get(i)[0] == 1 && list.get(i)[1] % 100 <= 100 - startPoint) {
-                startPoint = startPoint + num;
-                if (startPoint == 100) {
-                    count++;
-                    startPoint = 0;
-                }
-            }
-            else if (list.get(i)[0] == 1 && list.get(i)[1] % 100 > 100 - startPoint) {
-                startPoint = startPoint + num - 100;
-            }
+            System.out.println(count);
+        } catch (IOException e) {
+            System.err.println("Error reading the file: " + e.getMessage());
         }
-        return count;
+
+    }
+
+    public static int password(char direction, int val, int startPoint) {
+        if (direction == 'L' && val <= startPoint) {
+            startPoint = startPoint - val;
+        }
+        else if (direction == 'L' && val > startPoint) {
+            startPoint = convertLeft(val - startPoint);
+        }
+        else if (direction == 'R' && val <= 100 - startPoint) {
+            startPoint = startPoint + val;
+            if (startPoint == 100) {
+                startPoint = 0;
+            }
+        } else if (direction == 'R' && val > 100 - startPoint) {
+            startPoint = startPoint + val - 100;
+        }
+        return startPoint;
     }
 
     public static int convertLeft (int a){
