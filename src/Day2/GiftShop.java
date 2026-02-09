@@ -65,6 +65,6 @@ public class GiftShop {
     }
 
     static void main (String[] args) {
-
+        String[] ranges = new String[]{"10","20","30"};
     }
 }
