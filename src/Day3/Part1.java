@@ -1,23 +1,22 @@
 package Day3;
 
+import advent.util.Util;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 public class Part1 {
-    static void main() {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Day3/input.txt"))) {
-            String line;
-            int result = 0;
-            while ((line = br.readLine()) != null) {
-                result += getVoltage(line);
-            }
-            System.out.println(result);
-        } catch (IOException e) {
-            System.err.println("Error reading the file: " + e.getMessage());
+    static void main() throws IOException{
+        List<String> lines = Util.readInput(true, 3);
+
+        int sum = 0;
+        for(String line : lines){
+            sum += getVoltage(line);
         }
-        String a = "123456";
+        System.out.println(sum);
     }
 
     public static int getVoltage (String input) {
