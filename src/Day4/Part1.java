@@ -8,16 +8,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Part1 {
-    public static void main(String[] args) {
-        String a = "..@@.@@@@.";
-        String[] ab = a.split("");
-        System.out.println(Arrays.toString(ab));
+    static void main(String[] args) {
         String filePath = "src/Day4/input.txt";
         List<String[]> list = new ArrayList<>();
 
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            int count = 0;
             while ((line = br.readLine()) != null) {
                 String[] lineParts = line.split("");
                 list.add(lineParts);
@@ -30,6 +26,7 @@ public class Part1 {
 
     public static int check( List<String[]> input) {
         int result = 0;
+        List<int[]> toRemove = new ArrayList<>();
         for (int i = 0; i < input.size(); i++) {
             for  (int j = 0; j < input.get(i).length; j++) {
                 int count = 0;
@@ -60,6 +57,10 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
+                        int[] index = new int[2];
+                        index[0] = i;
+                        index[1] = j;
+                        toRemove.add(index);
                     }
                 }
 
@@ -81,6 +82,10 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
+                        int[] index = new int[2];
+                        index[0] = i;
+                        index[1] = j;
+                        toRemove.add(index);
                     }
                 }
 
@@ -102,15 +107,28 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
+                        int[] index = new int[2];
+                        index[0] = i;
+                        index[1] = j;
+                        toRemove.add(index);
                     }
                 }
 
                 else if (input.get(i)[j].equals("@") && i == 0 && j == 0) { // left top coner
-                        result++;
+                    result++;
+                    int[] index = new int[2];
+                    index[0] = i;
+                    index[1] = j;
+                    toRemove.add(index);
                 }
 
                 else if (input.get(i)[j].equals("@") && i == input.size()-1 && j == 0) { // left bottom coner
-                        result++;
+                    result++;
+                    int[] index = new int[2];
+                    index[0] = i;
+                    index[1] = j;
+                    toRemove.add(index);
+
                 }
 
                 else if (input.get(i)[j].equals("@") && i == input.size()-1 && j != 0 && j != input.get(i).length-1) { // last line without head and tail
@@ -131,11 +149,21 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
+                        int[] index = new int[2];
+                        index[0] = i;
+                        index[1] = j;
+                        toRemove.add(index);
+
                     }
                 }
 
                 else if (input.get(i)[j].equals("@") && i == input.size()-1 && j == input.get(i).length-1) { // right bottom coner
-                        result++;
+                    result++;
+                    int[] index = new int[2];
+                    index[0] = i;
+                    index[1] = j;
+                    toRemove.add(index);
+
                 }
 
                 else if (input.get(i)[j].equals("@") && i != 0 && i != input.size()-1 && j == input.get(i).length-1) { // right column without head and tail
@@ -156,14 +184,29 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
+                        int[] index = new int[2];
+                        index[0] = i;
+                        index[1] = j;
+                        toRemove.add(index);
                     }
                 }
                 else if (input.get(i)[j].equals("@") && i == 0 && j == input.get(i).length-1) { // right top coner
-                        result++;
+                    result++;
+                    int[] index = new int[2];
+                    index[0] = i;
+                    index[1] = j;
+                    toRemove.add(index);
                 }
             }
         }
-        return result;
+        if (result == 0) {
+            return 0;
+        }
+        for  (int i = 0; i < toRemove.size(); i++) {
+            int[] a =  toRemove.get(i);
+            input.get(a[0])[a[1]] = "X";
+        }
+        return result + check(input);
     }
 
 }
