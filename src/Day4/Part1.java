@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Part1 {
@@ -57,10 +56,7 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
-                        int[] index = new int[2];
-                        index[0] = i;
-                        index[1] = j;
-                        toRemove.add(index);
+
                     }
                 }
 
@@ -82,10 +78,7 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
-                        int[] index = new int[2];
-                        index[0] = i;
-                        index[1] = j;
-                        toRemove.add(index);
+
                     }
                 }
 
@@ -107,27 +100,17 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
-                        int[] index = new int[2];
-                        index[0] = i;
-                        index[1] = j;
-                        toRemove.add(index);
+
                     }
                 }
 
                 else if (input.get(i)[j].equals("@") && i == 0 && j == 0) { // left top coner
                     result++;
-                    int[] index = new int[2];
-                    index[0] = i;
-                    index[1] = j;
-                    toRemove.add(index);
+
                 }
 
                 else if (input.get(i)[j].equals("@") && i == input.size()-1 && j == 0) { // left bottom coner
                     result++;
-                    int[] index = new int[2];
-                    index[0] = i;
-                    index[1] = j;
-                    toRemove.add(index);
 
                 }
 
@@ -149,20 +132,11 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
-                        int[] index = new int[2];
-                        index[0] = i;
-                        index[1] = j;
-                        toRemove.add(index);
-
                     }
                 }
 
                 else if (input.get(i)[j].equals("@") && i == input.size()-1 && j == input.get(i).length-1) { // right bottom coner
                     result++;
-                    int[] index = new int[2];
-                    index[0] = i;
-                    index[1] = j;
-                    toRemove.add(index);
 
                 }
 
@@ -184,29 +158,16 @@ public class Part1 {
                     }
                     if (count < 4) {
                         result++;
-                        int[] index = new int[2];
-                        index[0] = i;
-                        index[1] = j;
-                        toRemove.add(index);
+
                     }
                 }
                 else if (input.get(i)[j].equals("@") && i == 0 && j == input.get(i).length-1) { // right top coner
                     result++;
-                    int[] index = new int[2];
-                    index[0] = i;
-                    index[1] = j;
-                    toRemove.add(index);
                 }
             }
         }
-        if (result == 0) {
-            return 0;
-        }
-        for  (int i = 0; i < toRemove.size(); i++) {
-            int[] a =  toRemove.get(i);
-            input.get(a[0])[a[1]] = "X";
-        }
-        return result + check(input);
+
+        return result;
     }
 
 }
