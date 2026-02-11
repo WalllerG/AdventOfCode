@@ -59,7 +59,7 @@ public class GiftShopPart1 {
                 return result;
             }
 
-            else if (diff1 == 0 && secondHalfOfEnd < firstHalfOfEnd) {
+            else if (diff1 == 0 && secondHalfOfEnd < firstHalfOfEnd || firstHalfOfStart < secondHalfOfStart) {
                 return 0;
             }
             else {
