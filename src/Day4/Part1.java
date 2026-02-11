@@ -1,26 +1,21 @@
 package Day4;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import advent.util.Util;
+
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Part1 {
-    static void main(String[] args) {
-        String filePath = "src/Day4/input.txt";
-        List<String[]> list = new ArrayList<>();
-
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] lineParts = line.split("");
-                list.add(lineParts);
-            }
-            System.out.println(check(list));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    static void main(String[] args) throws IOException {
+       List<String> lines = Util.readInput(true,4);
+       List<String[]> input = new ArrayList<>();
+       for  (String line : lines) {
+           String[] split = line.split("");
+           input.add(split);
+       }
+       System.out.println(check(input));
     }
 
     public static int check( List<String[]> input) {
