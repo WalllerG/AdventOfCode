@@ -1,8 +1,12 @@
 package Day2;
 
+import advent.util.Util;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Part1 {
 
@@ -114,18 +118,12 @@ public class Part1 {
         return secondHalf[1];
     }
 
-    static void main (String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Day2/input.txt"))) {
-            String line = br.readLine(); // Grabs the one long line
-            if (line != null) {
-                // Split the entire line into an array of range strings
-                String[] allRanges = line.split(",");
-                System.out.println(sumInvalidId(allRanges));
-            }
-        } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
+    static void main (String[] args) throws IOException{
+        List<String> lines = Util.readInput(true, 2);
+
+        for(String line : lines){
+            String[] input = line.split(",");
+            System.out.println(sumInvalidId(input));
         }
-        String test = "59-87";
-        System.out.println(findInvalidId(test));
     }
 }

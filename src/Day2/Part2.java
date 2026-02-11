@@ -1,22 +1,20 @@
 package Day2;
 
+import advent.util.Util;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Part2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        List<String> lines = Util.readInput(true, 2);
 
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Day2/input.txt"))) {
-            String line = br.readLine(); // Grabs the one long line
-            if (line != null) {
-                // Split the entire line into an array of range strings
-                String[] allRanges = line.split(",");
-                System.out.println(sumUp(allRanges));
-            }
-        } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
+        for(String line : lines){
+            String[] input = line.split(",");
+            System.out.println(sumUp(input));
         }
     }
     public static long sumUp(String[] ranges) {
