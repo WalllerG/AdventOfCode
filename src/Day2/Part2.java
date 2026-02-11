@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class GiftShopPart2 {
+public class Part2 {
     public static void main(String[] args) {
 
         try (BufferedReader br = new BufferedReader(new FileReader("src/Day2/input.txt"))) {
@@ -28,8 +28,8 @@ public class GiftShopPart2 {
     }
 
     public static long findInvalidIdPro(String input) {
-        String start = GiftShopPart1.getStart(input);
-        String end = GiftShopPart1.getEnd(input);
+        String start = Part1.getStart(input);
+        String end = Part1.getEnd(input);
         long startNum = Long.parseLong(start);
         long endNum = Long.parseLong(end);
         long result = 0;

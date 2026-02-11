@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class GiftShopPart1 {
+public class Part1 {
 
 
     public static long sumInvalidId (String[] input) {
