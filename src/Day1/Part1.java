@@ -1,34 +1,15 @@
 package Day1;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import advent.util.Util;
+
+
 import java.io.IOException;
+import java.util.List;
 
 
 public class Part1 {
 
-    static void main() {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Day1/operationList.txt"))) {
-            String line;
-            int count = 0;
-            int starPoint = 50;
-
-            while ((line = br.readLine()) != null) {
-
-
-                int val = Integer.parseInt(line.substring(1)) % 100;
-                char dir = line.charAt(0);
-
-                starPoint = password(dir,val,starPoint);
-                if (starPoint == 0) {
-                    count++;
-                }
-            }
-            System.out.println(count);
-        } catch (IOException e) {
-            System.err.println("Error reading the file: " + e.getMessage());
-        }
-
+    static void main() throws IOException{
     }
 
     public static int password(char direction, int val, int startPoint) {

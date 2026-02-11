@@ -6,34 +6,6 @@ import java.io.IOException;
 
 public class Part2 {
     static void main() {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Day1/operationList.txt"))) {
-            String line;
-            int count = 0;
-            int starPoint = 50;
-
-            while ((line = br.readLine()) != null) {
-
-                int val = Integer.parseInt(line.substring(1)) % 100;
-                int numOfRotation = Integer.parseInt(line.substring(1)) / 100;
-                char dir = line.charAt(0);
-                count += numOfRotation;
-
-                if (dir == 'L' && val > starPoint && starPoint != 0) {
-                    count++;
-                }
-                if (dir == 'R' && val > 100 - starPoint) {
-                    count++;
-                }
-
-                starPoint = password(dir,val,starPoint);
-                if (starPoint == 0) {
-                    count++;
-                }
-            }
-            System.out.println(count);
-        } catch (IOException e) {
-            System.err.println("Error reading the file: " + e.getMessage());
-        }
 
     }
 
