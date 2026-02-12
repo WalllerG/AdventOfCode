@@ -29,28 +29,31 @@ public class Part1 {
             }
         }
         sc.close();
-        TreeSet<Long> freshIds = isFreshId(part1);
+        String[][] freshIds = isFreshId(part1);
+        System.out.println(Arrays.deepToString(freshIds));
         int count = 0;
-        for  (int i = 0; i < part2.size(); i++) {
-            long id = Long.parseLong(part2.get(i));
-            if (freshIds.contains(id)) {
-                count++;
-            }
+        outer:
+        for  (String id : part2) {
+           for (String[] ranges : freshIds) {
+               if (Long.parseLong(ranges[0]) <= Long.parseLong(id) &&  Long.parseLong(ranges[1]) >= Long.parseLong(id)) {
+                   count++;
+                   continue outer;
+               }
+           }
         }
         System.out.println(count);
     }
-    public static TreeSet<Long> isFreshId(List<String> lines) {
-        TreeSet<Long> set = new TreeSet<>();
+    public static String[][] isFreshId(List<String> lines) {
+        String[][] freshIds = new String[lines.size()][2];
         int i = 0;
         while (i  < lines.size()) {
             String[] ranges = lines.get(i).split("-");
-            long start = Long.parseLong(ranges[0]);
-            long end = Long.parseLong(ranges[1]);
-            for (long j = start; j <= end; j++) {
-                set.add(j);
+            for (int j = 0; j < freshIds[i].length; j++) {
+                freshIds[i][0] = String.valueOf(ranges[0]);
+                freshIds[i][1] = String.valueOf(ranges[1]);
             }
             i++;
         }
-        return set;
+        return freshIds;
     }
 }
