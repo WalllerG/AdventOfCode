@@ -10,6 +10,10 @@ import java.util.List;
 public class Part1 {
 
     static void main() throws IOException{
+        int a = 123456;
+        String b = String.valueOf(a);
+        String c = b.substring(5,6);
+        int d = Integer.parseInt(b);
     }
 
     public static int password(char direction, int val, int startPoint) {
