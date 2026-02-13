@@ -3,7 +3,6 @@ package Day6;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import advent.util.Util;
 
@@ -11,7 +10,7 @@ public class Part1 {
     static void main() throws IOException {
 
         List<String> lines = Util.readInput(true,6);
-        List<List<String>> list = lines.stream().map(Part1::getRow).collect(Collectors.toList());
+        List<List<String>> list = lines.stream().map(Part1::getRow).toList();
         long result = 0;
         for  (int i = 0; i < list.getFirst().size(); i++) {
             String operation = list.getLast().get(i);
