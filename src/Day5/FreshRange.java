@@ -33,6 +33,21 @@ public class FreshRange {
         return false;
     }
 
+    public boolean isOverLap (FreshRange input) {
+        long newStart = input.start;
+        long newEnd = input.end;
+        if (inRange(newStart) || inRange(newEnd)) {
+            if (newStart < start) {
+                this.start = newStart;
+            }
+            if (newEnd > end) {
+                this.end = newEnd;
+            }
+            return true;
+        }
+        return false;
+    }
+
     public long getSize() {
         return end - start + 1;
     }

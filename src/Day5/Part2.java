@@ -6,7 +6,7 @@ import Day5.FreshRange;
 
 public class Part2 {
     static void main(String[] args) throws Exception {
-        List<String> lines = Util.readInput(false, 5);
+        List<String> lines = Util.readInput(true, 5);
         List<String> part1 = new ArrayList<>();
         int i = 0;
         while (!lines.get(i).isEmpty()) {
@@ -25,6 +25,13 @@ public class Part2 {
             ranges.add(new FreshRange(s));
         }
         long result = 0;
+        for  (int j = 0; j < ranges.size(); j++) {
+           for  (int k = 0; k < ranges.size(); k++) {
+               if (ranges.get(j).isOverLap(ranges.get(k)) && ranges.get(k) != ranges.get(j)) {
+                   ranges.remove(ranges.get(k));
+               }
+           }
+        }
         for  (FreshRange fr : ranges) {
             result += fr.getSize();
         }
