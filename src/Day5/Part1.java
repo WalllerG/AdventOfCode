@@ -30,7 +30,6 @@ public class Part1 {
         }
         sc.close();
         String[][] freshIds = isFreshId(part1);
-        System.out.println(Arrays.deepToString(freshIds));
         int count = 0;
         outer:
         for  (String id : part2) {
@@ -49,8 +48,8 @@ public class Part1 {
         while (i  < lines.size()) {
             String[] ranges = lines.get(i).split("-");
             for (int j = 0; j < freshIds[i].length; j++) {
-                freshIds[i][0] = String.valueOf(ranges[0]);
-                freshIds[i][1] = String.valueOf(ranges[1]);
+                freshIds[i][0] = ranges[0];
+                freshIds[i][1] = ranges[1];
             }
             i++;
         }
