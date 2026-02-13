@@ -32,16 +32,16 @@ public class Part1 {
         }
         System.out.println(result);
 
-      }
+    }
 
-     public static List<String> getRow (String input) {
+    public static List<String> getRow (String input) {
         String[] nums = input.split(" ");
         List<String> list = new ArrayList<>();
-         for (String num : nums) {
-             if (!num.isEmpty()) {
-                 list.add(num);
-             }
-         }
+        for (String num : nums) {
+            if (!num.isEmpty()) {
+                list.add(num);
+            }
+        }
         return list;
-     }
+    }
 }
