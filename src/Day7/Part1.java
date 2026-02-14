@@ -8,21 +8,15 @@ import java.util.List;
 public class Part1 {
     static void main() throws Exception {
         List<String> lines = advent.util.Util.readInput(true, 7);
-        List<List<String>> simplify = new ArrayList<>();
-        for (String line : lines) {
-            List<String> row = Arrays.asList(line.split(""));
-            if (row.contains("^") || row.contains("S")) {
-                simplify.add(row);
-            }
-        }
+        List<List<String>> simple = simplify(lines);
         HashSet<Integer> SIndex = new HashSet<>();
-        int Start = getStartIndex(simplify.getFirst());
+        int Start = getStartIndex(simple.getFirst());
         SIndex.add(Start);
         int count = 0;
-        for (int i = 0; i < simplify.size() - 1; i++) {
+        for (int i = 0; i < simple.size() - 1; i++) {
             HashSet<Integer> copy = deepCopy(SIndex);
             for (Integer index : copy) {
-                if (simplify.get(i + 1).get(index).equals("^")) {
+                if (simple.get(i + 1).get(index).equals("^")) {
                     SIndex.remove(index);
                     SIndex.add(index + 1);
                     SIndex.add(index - 1);
@@ -46,4 +40,16 @@ public class Part1 {
         }
         return -1;
     }
+
+    public static List<List<String>> simplify (List<String> lines) {
+        List<List<String>> simplify = new ArrayList<>();
+        for (String line : lines) {
+            List<String> row = Arrays.asList(line.split(""));
+            if (row.contains("^") || row.contains("S")) {
+                simplify.add(row);
+            }
+        }
+        return simplify;
+    }
+
 }
