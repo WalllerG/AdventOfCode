@@ -21,6 +21,7 @@ public class Part1 {
         for (int i = circuits.size() - 1; i >= circuits.size()-3; i--) {
             result *= circuits.get(i).size();
         }
+        System.out.println(circuits);
         System.out.println(result);
     }
 
