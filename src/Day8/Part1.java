@@ -38,7 +38,7 @@ public class Part1 {
         Map<Integer, List<Integer>> groupsMap = new HashMap<>();
         for (Integer key : allKeys) {
             int root = find(parent, key);
-            groupsMap.computeIfAbsent(root, k -> new ArrayList<>()).add(key);
+            groupsMap.computeIfAbsent(root, _ -> new ArrayList<>()).add(key);
         }
 
         return new ArrayList<>(groupsMap.values());
