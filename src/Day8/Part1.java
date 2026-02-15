@@ -1,7 +1,6 @@
 package Day8;
 
 import advent.util.Util;
-import com.sun.source.tree.Tree;
 
 import java.io.IOException;
 import java.util.*;
@@ -26,32 +25,26 @@ public class Part1 {
     }
 
     public static List<List<Integer>> getConnectedGroups(List<int[]> pairs, Set<Integer> allKeys) {
-        // 1. Initialize Union-Find structure
         Map<Integer, Integer> parent = new HashMap<>();
         for (Integer key : allKeys) {
             parent.put(key, key);
         }
 
-        // 2. Union the pairs
         for (int[] pair : pairs) {
             union(parent, pair[0], pair[1]);
         }
 
-        // 3. Group keys by their ultimate root
         Map<Integer, List<Integer>> groupsMap = new HashMap<>();
         for (Integer key : allKeys) {
             int root = find(parent, key);
-            // If the group doesn't exist yet, create a new list
             groupsMap.computeIfAbsent(root, k -> new ArrayList<>()).add(key);
         }
 
-        // 4. Return as a List of Lists
         return new ArrayList<>(groupsMap.values());
     }
 
     private static int find(Map<Integer, Integer> parent, int i) {
         if (parent.get(i) == i) return i;
-        // Path compression for efficiency
         int root = find(parent, parent.get(i));
         parent.put(i, root);
         return root;
@@ -93,8 +86,6 @@ public class Part1 {
     }
 
     public static  List<int[]> findClosestKeys(List<Map.Entry<Integer, List<Integer>>> entries, int k) {
-        // 1. Sort by X-coordinate initially (index 0 of the List value)
-
         PriorityQueue<Result> pq = new PriorityQueue<>(Comparator.comparingDouble(p -> p.distance));
         for (int i = 0; i < entries.size(); i++) {
             for (int j = i + 1; j < entries.size(); j++) {
