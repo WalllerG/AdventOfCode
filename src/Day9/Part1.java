@@ -8,8 +8,8 @@ public class Part1 {
     static void main() throws Exception{
         List<String> lines = Util.readInput(true,9);
         List<int[]> coors = new ArrayList<>();
-        for (int i = 0 ; i < lines.size() ; i++) {
-            String[] coor = lines.get(i).split(",");
+        for (String line : lines) {
+            String[] coor = line.split(",");
             coors.add(new int[]{Integer.parseInt(coor[0]), Integer.parseInt(coor[1])});
         }
         System.out.println(Arrays.deepToString(coors.toArray()));
