@@ -24,13 +24,12 @@ public class Part2 {
             if (circuits.size() > 1) {
                 startBefore = start;
                 start = start + (end - start) / 2;
-                circuits = getConnectedGroups(Part1.findClosestKeys(sortedList,start),allKeys);
             }
             else {
                 end = start;
                 start = startBefore;
-                circuits = getConnectedGroups(Part1.findClosestKeys(sortedList,start),allKeys);
             }
+            circuits = getConnectedGroups(Part1.findClosestKeys(sortedList,start),allKeys);
         }
         List<int[]> pair = Part1.findClosestKeys(sortedList,start);
         long result = (long) junctionBoxes.get(pair.getLast()[0]).getFirst() * junctionBoxes.get(pair.getLast()[1]).getFirst();
