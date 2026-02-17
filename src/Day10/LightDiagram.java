@@ -14,6 +14,16 @@ public class LightDiagram {
         this.diagram = lights;
         this.goal = goal;
     }
+
+    LightDiagram(LightDiagram diagram){
+        List<Light> lights = new ArrayList<>();
+        for (int i = 0; i < diagram.diagram.size(); i++){
+            lights.add(new Light());
+        }
+        this.diagram = lights;
+        this.goal = diagram.goal;
+    }
+
     public boolean check () {
         for (int i = 0; i < goal.size(); i++) {
             if (goal.get(i).on != diagram.get(i).on) {

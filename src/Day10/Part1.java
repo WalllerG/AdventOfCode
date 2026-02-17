@@ -2,69 +2,97 @@ package Day10;
 
 import advent.util.Util;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Part1 {
-    public static void main(String[] args) throws Exception{
-        List<String> lines = Util.readInput(false,10);
-        List<LightDiagram> machines = new ArrayList<>();
-        List<List<Button>> buttons = new ArrayList<>();
-        getMachines(lines, buttons, machines);
-        System.out.println(Arrays.toString(machines.toArray()));
-        System.out.println(Arrays.toString(buttons.toArray()));
-        buttons.getFirst().get(4).click();
-        buttons.getFirst().get(5).click();
-        System.out.println(machines.getFirst().check());
+    public static void main() throws Exception{
+        List<String> lines = Util.readInput(true,10);
+        getResult(lines);
+    }
+
+    private static void getResult(List<String> lines) {
+        int result = 0;
+        for (String line : lines){
+            List<List<Integer>> buttons = getButtons(line);
+            String target = getSign(line);
+            result += getPresses(target, buttons);
+        }
+        System.out.println(result);
+    }
+
+    private static int getPresses(String target, List<List<Integer>> buttons) {
+
+        Queue<String> queue = new LinkedList<>();
+
+        Map<String, Integer> map = new HashMap<>();
+
+        String initial = ".".repeat(target.length());
+
+        queue.add(initial);
+        map.put(initial,0);
+
+        while (!queue.isEmpty()){
+            String currentState = queue.poll();
+            int pressed = map.get(currentState);
+
+            if (currentState.equals(target)) {
+                return pressed;
+            }
+            for (List<Integer> button : buttons) {
+                String nextState = toggle(currentState, button);
+                if  (!map.containsKey(nextState)) {
+                    map.put(nextState,pressed+1);
+                    queue.add(nextState);
+                }
+            }
+        }
+        System.out.println("No solution found.");
+        return 0;
+    }
+
+    public static String toggle (String currentState, List<Integer> button) {
+        char[] chars = currentState.toCharArray();
+        for (int index : button) {
+            chars[index] = (chars[index] == '.') ? '#' : '.';
+        }
+        return new String(chars);
     }
 
 
-
-
-
-
-    private static void getMachines(List<String> lines, List<List<Button>> buttons, List<LightDiagram> machines) {
-        for (String line : lines){
-            List<String> signs = new ArrayList<>();
-            List<List<Integer>> ButtonSets = new ArrayList<>();
-            Pattern p = Pattern.compile("([\\[\\(])([^\\)\\]]*)[\\]\\)]");
+    public static String getSign(String line) {
+            String sign = "";
+            Pattern p = Pattern.compile("([\\[(])([^)\\]]*)[])]");
             Matcher m = p.matcher(line);
             while (m.find()) {
                 String bracketType = m.group(1);
                 String content = m.group(2);
-
                 if (bracketType.equals("[")) {
-                    signs.addAll(Arrays.asList(content.split("")));
+                    sign = String.format("%s", content);
 
-                } else if (bracketType.equals("(")) {
-                    List<Integer> nums = new ArrayList<>();
-                    for (String s : content.split(",")) {
-                        if (!s.trim().isEmpty()) {
-                            nums.add(Integer.parseInt(s.trim()));
-                        }
+                }
+            }
+            return sign;
+    }
+
+    public static List<List<Integer>> getButtons(String line) {
+        List<List<Integer>> ButtonSets = new ArrayList<>();
+        Pattern p = Pattern.compile("([\\[(])([^)\\]]*)[])]");
+        Matcher m = p.matcher(line);
+        while (m.find()) {
+            String bracketType = m.group(1);
+            String content = m.group(2);
+            if (bracketType.equals("(")) {
+                List<Integer> nums = new ArrayList<>();
+                for (String s : content.split(",")) {
+                    if (!s.trim().isEmpty()) {
+                        nums.add(Integer.parseInt(s.trim()));
                     }
-                    ButtonSets.add(nums);
                 }
+                ButtonSets.add(nums);
             }
-            List<Light> lights = new ArrayList<>();
-            for (String sign : signs){
-                if (sign.equals(".")) {
-                    lights.add(new Light(false));
-                }
-                else if (sign.equals("#")) {
-                    lights.add(new Light(true));
-                }
-            }
-            LightDiagram diagram = new LightDiagram(signs.size(),lights);
-            List<Button> button = new ArrayList<>();
-            for (List<Integer> buttonSet : ButtonSets) {
-               button.add(new Button(buttonSet, diagram));
-            }
-            buttons.add(button);
-            machines.add(diagram);
         }
+        return ButtonSets;
     }
 }

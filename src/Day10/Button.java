@@ -1,5 +1,6 @@
 package Day10;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Button {
@@ -9,9 +10,13 @@ public class Button {
         this.inputs = inputs;
         this.diagram = diagram;
     }
+    Button(LightDiagram diagram, Button button) {
+        this.diagram = diagram;
+        this.inputs = button.inputs;
+    }
     public void click() {
         for (Integer i : inputs) {
-            diagram.diagram.get(i).click();
+            this.diagram.diagram.get(i).click();
         }
     }
     public String toString() {
