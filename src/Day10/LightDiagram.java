@@ -1,19 +1,28 @@
 package Day10;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LightDiagram {
-    Light[] diagram;
-    int length;
-    LightDiagram(int length){
-        Light[] diagram = new Light[length];
+    List<Light> diagram;
+    List<Light> goal;
+    LightDiagram(int length, List<Light> goal) {
+        List<Light> lights = new ArrayList<>();
         for (int i = 0; i < length; i++){
-            diagram[i] = new Light();
+            lights.add(new Light());
         }
-        this.length = length;
-        this.diagram = diagram;
+        this.diagram = lights;
+        this.goal = goal;
+    }
+    public boolean check () {
+        for (int i = 0; i < goal.size(); i++) {
+            if (goal.get(i).on != diagram.get(i).on) {
+                return false;
+            }
+        }
+        return true;
     }
     public String toString(){
-        return Arrays.toString(diagram);
+        return diagram.toString();
     }
 }
