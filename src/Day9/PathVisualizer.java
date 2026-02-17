@@ -9,7 +9,7 @@ import java.util.List;
 import advent.util.Util;
 
 public class PathVisualizer extends JPanel {
-    private Path2D path;
+    private final Path2D path;
 
     public PathVisualizer(Path2D path) {
         this.path = path;
@@ -28,7 +28,7 @@ public class PathVisualizer extends JPanel {
             double scaleY = (getHeight() - 100) / bounds.getHeight();
             double scale = Math.min(scaleX, scaleY);
 
-            g2.translate(50, 50); // Margin
+            g2.translate(50, 50);
             g2.scale(scale, scale);
             g2.translate(-bounds.getX(), -bounds.getY());
 
@@ -41,8 +41,8 @@ public class PathVisualizer extends JPanel {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        List<String> lines = Util.readInput(true, 9);
+    static void main() throws IOException {
+        List<String> lines = Util.readInput(false, 9);
         Path2D path = new Path2D.Double();
         boolean start = true;
 
@@ -60,14 +60,13 @@ public class PathVisualizer extends JPanel {
         }
         path.closePath();
 
-        // --- STEP B: Pass that path into the Panel ---
+
         JFrame frame = new JFrame("Path2D Visualizer");
 
-        // Pass the 'path' we just built into the constructor
         PathVisualizer panel = new PathVisualizer(path);
 
         frame.add(panel);
-        frame.setSize(500, 500); // Increased size in case your points are large
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

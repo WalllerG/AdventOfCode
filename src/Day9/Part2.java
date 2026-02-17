@@ -2,21 +2,25 @@ package Day9;
 
 import advent.util.Util;
 
+import java.awt.*;
+import java.awt.geom.Area;
 import java.awt.geom.GeneralPath;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.math.BigInteger;
 import java.util.*;
-
+import java.util.List;
 
 
 public class Part2 {
     static void main() throws Exception {
+
         boolean start = true;
+
         List<String> lines = Util.readInput(true,9);
+
         GeneralPath path = new GeneralPath();
+
         List<Point> points = new ArrayList<>();
+
         for (String line : lines) {
             String[] coor = line.split(",");
             int x = Integer.parseInt(coor[0]);
@@ -24,47 +28,35 @@ public class Part2 {
             points.add(new Point(x, y));
             if (start) {
                 path.moveTo(x, y);
+                start = false;
             }
             else {
                 path.lineTo(x, y);
             }
         }
-        path.closePath();
 
-    }
+        Area area = new Area(path);
 
-    public static long getMaxX (List<List<Integer>> coors) {
-        long maxX = 0;
-        for (List<Integer> coor : coors) {
-            if (coor.getFirst() > maxX) maxX = coor.getFirst();
+        BigInteger largestArea = BigInteger.ZERO;
+        for (int i = 0; i < points.size(); i++) {
+            for (int j = 0; j < points.size(); j++) {
+                int width = Math.abs(points.get(i).x - points.get(j).x) + 1;
+                int height = Math.abs(points.get(i).y - points.get(j).y) + 1;
+                BigInteger newArea = BigInteger.valueOf(width).multiply(BigInteger.valueOf(height));
+                Rectangle rect = new Rectangle(
+                        Math.min(points.get(i).x, points.get(j).x),
+                        Math.min(points.get(i).y, points.get(j).y),
+                        width - 1,
+                        height - 1
+                );
+                if (area.contains(rect)) {
+                    if (largestArea.compareTo(newArea) == -1) {
+                        largestArea = newArea;
+                    }
+                }
+            }
         }
-        return maxX;
-    }
-    public static long getMaxY (List<List<Integer>> coors) {
-        long maxY = 0;
-        for (List<Integer> coor: coors) {
-            if (coor.getLast() > maxY) maxY = coor.getLast();
-        }
-        return maxY;
-    }
-    public static long getMinX (List<List<Integer>> coors) {
-        long minX = Integer.MAX_VALUE;
-        for (List<Integer> coor : coors) {
-            if (coor.getFirst() < minX) minX = coor.getFirst();
-        }
-        return minX;
-    }
-    public static long getMinY (List<List<Integer>> coors) {
-        long minY = Integer.MAX_VALUE;
-        for (List<Integer> coor: coors) {
-            if (coor.getLast() < minY) minY = coor.getLast();
-        }
-        return minY;
+        System.out.println(largestArea);
     }
 
-    public static long getArea (List<Integer> point1, List<Integer> point2) {
-        long length = Math.abs(point2.getFirst() - point1.getFirst()) + 1;
-        long width = Math.abs(point2.getLast() - point1.getLast()) + 1;
-        return length * width;
-    }
 }
