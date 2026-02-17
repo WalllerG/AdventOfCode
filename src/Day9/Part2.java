@@ -35,28 +35,33 @@ public class Part2 {
             }
         }
 
+        BigInteger largestArea = getLargestArea(path, points);
+        System.out.println(largestArea);
+    }
+
+    private static BigInteger getLargestArea(GeneralPath path, List<Point> points) {
         Area area = new Area(path);
 
         BigInteger largestArea = BigInteger.ZERO;
         for (int i = 0; i < points.size(); i++) {
-            for (int j = 0; j < points.size(); j++) {
-                int width = Math.abs(points.get(i).x - points.get(j).x) + 1;
-                int height = Math.abs(points.get(i).y - points.get(j).y) + 1;
+            for (Point point : points) {
+                int width = Math.abs(points.get(i).x - point.x) + 1;
+                int height = Math.abs(points.get(i).y - point.y) + 1;
                 BigInteger newArea = BigInteger.valueOf(width).multiply(BigInteger.valueOf(height));
                 Rectangle rect = new Rectangle(
-                        Math.min(points.get(i).x, points.get(j).x),
-                        Math.min(points.get(i).y, points.get(j).y),
+                        Math.min(points.get(i).x, point.x),
+                        Math.min(points.get(i).y, point.y),
                         width - 1,
                         height - 1
                 );
                 if (area.contains(rect)) {
-                    if (largestArea.compareTo(newArea) == -1) {
+                    if (largestArea.compareTo(newArea) < 0) {
                         largestArea = newArea;
                     }
                 }
             }
         }
-        System.out.println(largestArea);
+        return largestArea;
     }
 
 }
