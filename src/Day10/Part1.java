@@ -70,7 +70,6 @@ public class Part1 {
                 String content = m.group(2);
                 if (bracketType.equals("[")) {
                     sign = String.format("%s", content);
-
                 }
             }
             return sign;
