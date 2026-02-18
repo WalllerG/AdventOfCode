@@ -8,11 +8,8 @@ import java.util.regex.Pattern;
 
 public class Part2 {
     public static void main() throws Exception{
-        List<String> lines = Util.readInput(false,10);
+        List<String> lines = Util.readInput(true,10);
         getResult(lines);
-        List<Integer> target = getJoltage(lines.get(0));
-        List<List<Integer>> buttons = getButtons(lines.get(0));
-        //System.out.println(getPresses(target,buttons));
     }
 
     private static void getResult(List<String> lines) {
@@ -45,7 +42,6 @@ public class Part2 {
             for (List<Integer> button : buttons) {
                 List<Integer> nextState = press(currentState, button, target);
 
-                // If nextState is null, it means it was pruned
                 if (nextState != null && !visited.containsKey(nextState)) {
                     visited.put(nextState, presses + 1);
                     queue.add(nextState);
@@ -59,7 +55,6 @@ public class Part2 {
         List<Integer> next = new ArrayList<>(current);
         for (int index : button) {
             int newVal = next.get(index) + 1;
-            // PRUNING: If we exceed the target at this index, this state is invalid
             if (newVal > target.get(index)) {
                 return null;
             }
@@ -75,10 +70,9 @@ public class Part2 {
         Matcher m = p.matcher(line);
 
         if (m.find()) {
-            String content = m.group(2);
-            sign = content.replace(",", "");
+            sign = m.group(2);
         }
-        String[] lines = sign.split("");
+        String[] lines = sign.split(",");
         List<Integer> joltage = new ArrayList<>();
         for (String a: lines) {
             joltage.add(Integer.parseInt(a));
