@@ -7,10 +7,10 @@ import java.util.*;
 public class Part1 {
     public static void main()  throws Exception {
         List<String> lines = Util.readInput(true, 11);
-        getResult(lines);
+        getResult(lines,"you");
     }
 
-    private static void getResult(List<String> lines) {
+    public static void getResult(List<String> lines, String target) {
         HashMap<String, Device> devices = new HashMap<>();
         for (String line : lines) {
             String[] parts = line.split(" ");
@@ -20,7 +20,7 @@ public class Part1 {
                 head = devices.get(name);
             }
             else {
-                head = new Device(name, new ArrayList<>());
+                head = new Device(name, new HashSet<>());
                 devices.put(name, head);
             }
             for  (int i = 1; i < parts.length; i++) {
@@ -28,24 +28,25 @@ public class Part1 {
                     head.outputs.add(devices.get(parts[i]));
                 }
                 else {
-                    Device device = new Device(parts[i], new ArrayList<>());
+                    Device device = new Device(parts[i], new HashSet<>());
                     head.outputs.add(device);
                     devices.put(parts[i], device);
                 }
             }
         }
-        Device you = devices.get("you");
-        System.out.println(getPath(you));
+        Device out = devices.get("out");
+        Device you = devices.get(target);
+        System.out.println(getPath(you,out));
     }
 
-    private static int getPath(Device you) {
+    public static int getPath(Device you, Device out) {
         int count = 0;
         for (Device device : you.outputs) {
-            if (device.outputs.getFirst().name.equals("out")) {
+            if (device.outputs.contains(out)) {
                 count++;
             }
             else {
-               count += getPath(device);
+               count += getPath(device,out);
             }
         }
         return count;

@@ -1,11 +1,11 @@
 package Day11;
 
-import java.util.List;
+import java.util.HashSet;
 
 public class Device {
     String name;
-    List<Device> outputs;
-    public Device(String name, List<Device> outputs) {
+    HashSet<Device> outputs;
+    public Device(String name, HashSet<Device> outputs) {
         this.name = name;
         this.outputs = outputs;
     }
