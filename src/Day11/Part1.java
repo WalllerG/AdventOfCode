@@ -5,8 +5,12 @@ import advent.util.Util;
 import java.util.*;
 
 public class Part1 {
-    public static void main(String[] args)  throws Exception {
+    public static void main()  throws Exception {
         List<String> lines = Util.readInput(true, 11);
+        getResult(lines);
+    }
+
+    private static void getResult(List<String> lines) {
         HashMap<String, Device> devices = new HashMap<>();
         for (String line : lines) {
             String[] parts = line.split(" ");
