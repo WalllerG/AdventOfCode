@@ -10,25 +10,29 @@ public class Part2 {
         List<String> lines = Util.readInput(true,10);
         //getResult(lines);
         int result = 0;
-        for (String line : lines){
-            List<Integer> target = getJoltage(lines.get(2));
-            List<List<Integer>> buttons = getButtons(lines.get(2));
-            int presses = getEvenPress(target, buttons);
-            List<Integer> newTarget =getEvenState(target, buttons);
-            result += recursion(newTarget,buttons,presses);
+        List<Integer> target = getJoltage(lines.get(2));
+        List<List<Integer>> buttons = getButtons(lines.get(2));
+        Map<List<Integer>, Integer> map = getEvenCombo(target, buttons);
+        System.out.println(map);
+        long smallest = Long.MAX_VALUE;
+        for (Map.Entry<List<Integer>, Integer> entry : map.entrySet()) {
+            long val = recursion(entry.getKey(),buttons, entry.getValue());
+            if (val < smallest) {
+                smallest = val;
+            }
         }
-        System.out.println(result);
+        System.out.println(smallest);
     }
 
-    private static void getResult(List<String> lines) {
-        int result = 0;
-        for (String line : lines){
-            List<List<Integer>> buttons = getButtons(line);
-            List<Integer> target = getJoltage(line);
-            result += getPresses(target, buttons);
-        }
-        System.out.println(result);
-    }
+//    private static void getResult(List<String> lines) {
+//        int result = 0;
+//        for (String line : lines){
+//            List<List<Integer>> buttons = getButtons(line);
+//            List<Integer> target = getJoltage(line);
+//            result += getPresses(target, buttons);
+//        }
+//        System.out.println(result);
+//    }
 
     public static boolean checkEven (List<Integer> target) {
       for (Integer i : target){
@@ -39,18 +43,9 @@ public class Part2 {
       return true;
     }
 
-    public static int recursion (List<Integer> target, List<List<Integer>> buttons, int presses){
+    public static long recursion (List<Integer> target, List<List<Integer>> buttons, int presses){
         if (!checkEven(target)){
-            List<Integer> newTarget = getEvenState(target, buttons);
-            int newPresses;
-            if (newTarget == null) {
-                return getPresses(target, buttons);
-            }
-            else {
-                newPresses = getEvenPress(newTarget, buttons);
-                return recursion(newTarget,buttons,newPresses);
-            }
-
+            return getPresses(target, buttons);
         }
         else {
             for (int i = 0; i < target.size(); i++) {
@@ -59,77 +54,6 @@ public class Part2 {
             return recursion(target, buttons, presses) * 2 + presses;
         }
     }
-
-    public static List<Integer> getEvenState(List<Integer> target, List<List<Integer>> buttons) {
-
-        Queue<List<Integer>> queue = new LinkedList<>();
-
-        Map<List<Integer>, Integer> visited = new HashMap<>();
-
-        List<Integer> initial = new ArrayList<>(target);
-
-        queue.add(initial);
-
-        visited.put(initial, 0);
-
-        while (!queue.isEmpty()) {
-            List<Integer> currentState = queue.poll();
-
-            int presses = visited.get(currentState);
-
-            if (checkEven(currentState)) {
-                return currentState;
-            }
-
-            for (List<Integer> button : buttons) {
-                List<Integer> nextState = press1(button, currentState);
-
-                if (nextState != null && !visited.containsKey(nextState)) {
-                    visited.put(nextState, presses+1);
-                    visited.remove(currentState, presses);
-                    queue.add(nextState);
-                }
-            }
-        }
-        return null;
-
-    }
-
-
-    public static int getEvenPress(List<Integer> target, List<List<Integer>> buttons) {
-
-        Queue<List<Integer>> queue = new LinkedList<>();
-
-        Map<List<Integer>, Integer> visited = new HashMap<>();
-
-        List<Integer> initial = new ArrayList<>(target);
-
-        queue.add(initial);
-
-        visited.put(initial, 0);
-
-        while (!queue.isEmpty()) {
-            List<Integer> currentState = queue.poll();
-
-            int presses = visited.get(currentState);
-
-            if (checkEven(currentState)) {
-                return presses;
-            }
-
-            for (List<Integer> button : buttons) {
-                List<Integer> nextState = press1(button, currentState);
-
-                if (nextState != null && !visited.containsKey(nextState)) {
-                    visited.put(nextState, presses+1);
-                    visited.remove(currentState, presses);
-                    queue.add(nextState);
-                }
-            }
-        }
-        return -1;
-    }
-
 
     private static int getPresses(List<Integer> target, List<List<Integer>> buttons) {
 
@@ -160,6 +84,43 @@ public class Part2 {
         }
         return -1;
     }
+
+    public static  Map<List<Integer>, Integer> getEvenCombo(List<Integer> target, List<List<Integer>> buttons) {
+
+        Map<List<Integer>, Integer> combo = new HashMap<>();
+
+        Queue<List<Integer>> queue = new LinkedList<>();
+
+        Map<List<Integer>, Integer> visited = new HashMap<>();
+
+        List<Integer> initial = new ArrayList<>(target);
+
+        queue.add(initial);
+
+        visited.put(initial, 0);
+
+        while (!queue.isEmpty()) {
+            List<Integer> currentState = queue.poll();
+
+            int presses = visited.get(currentState);
+
+            if (checkEven(currentState)) {
+                combo.put(currentState, presses);
+            }
+
+            for (List<Integer> button : buttons) {
+                List<Integer> nextState = press1(button, currentState);
+
+                if (nextState != null && !visited.containsKey(nextState)) {
+                    visited.put(nextState, presses+1);
+                    visited.remove(currentState, presses);
+                    queue.add(nextState);
+                }
+            }
+        }
+        return combo;
+    }
+
 
     private static List<Integer> press(List<Integer> current, List<Integer> button, List<Integer> target) {
         List<Integer> next = new ArrayList<>(current);

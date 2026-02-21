@@ -22,7 +22,7 @@ public class Part1 {
         System.out.println(result);
     }
 
-    private static int getPresses(String target, List<List<Integer>> buttons) {
+    public static int getPresses(String target, List<List<Integer>> buttons) {
 
         Queue<String> queue = new LinkedList<>();
 
