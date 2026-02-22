@@ -4,7 +4,7 @@ data = read_input(2, True)
 
 
 def is_safe(num: list[int]) -> bool:
-    diffs = [num[j + 1] - num[i] for j in range(len(num) - 1)]
+    diffs = [num[j + 1] - num[j] for j in range(len(num) - 1)]
 
     all_increasing = all(1 <= d <= 3 for d in diffs)
     all_decreasing = all(-3 <= d <= -1 for d in diffs)
