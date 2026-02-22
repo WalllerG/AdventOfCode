@@ -13,13 +13,17 @@ for line in data:
             if int (nums[i]) > int (nums[i+1]):
                 if int(nums[i]) - int(nums[i+1]) < 1 or int (nums[i]) -int (nums[i+1]) > 3:
                     safe = False
+                    break
             else:
+                safe = False
                 break
         elif increase:
             if int (nums[i]) < int (nums[i+1]):
-                if int (nums[i]) - int(nums[i+1]) > 3 or int (nums[i]) -int (nums[i+1]) < 1:
+                if int (nums[i+1]) - int(nums[i]) > 3 or int (nums[i+1]) -int (nums[i]) < 1:
                     safe = False
+                    break
             else:
+                safe = False
                 break
     if safe:
         result += 1
