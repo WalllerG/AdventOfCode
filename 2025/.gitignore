@@ -8,6 +8,6 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-/.idea
+/2025/.idea
 /out
 /AdventOfCode.iml
