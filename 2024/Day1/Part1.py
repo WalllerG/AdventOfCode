@@ -12,6 +12,6 @@ rightList.sort()
 leftList.sort()
 
 result = 0
-for i in range(len(leftList)):
-    result += abs(leftList[i] - rightList[i])
+for left, right in zip(leftList, rightList):
+    result += abs(left - right)
 print(result)
