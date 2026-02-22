@@ -1,6 +1,6 @@
 from Util import read_input
 
-data = read_input(1, False)
+data = read_input(1, True)
 leftList = []
 rightList = []
 for line in data:
