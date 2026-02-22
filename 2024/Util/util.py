@@ -2,9 +2,8 @@ import os
 
 
 def read_input(day: int, test: bool = False) -> list[str]:
-    base_dir = os.path.dirname(__file__)
     file_name = "input.txt" if test else "test.txt"
-    file_path = os.path.join(base_dir, f"Day{day}", file_name)
+    file_path = os.path.join("/Users/walter/Desktop/AdventOfCode/2024/", f"Day{day}", file_name)
 
     try:
         with open(file_path, 'r') as file:
