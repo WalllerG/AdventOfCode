@@ -24,5 +24,4 @@ for left in leftList:
     elif left in memo:
         result += left * memo[left]
 
-
 print(result)
