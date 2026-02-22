@@ -1,4 +1,4 @@
-from Util import read_input
+from Util.util import read_input
 
 data = read_input(1, True)
 leftList = []
