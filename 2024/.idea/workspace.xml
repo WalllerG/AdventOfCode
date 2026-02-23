@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish day1!">
-      <change afterPath="$PROJECT_DIR$/Day3/Part1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day3/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/2024.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2024.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day3">
+      <change afterPath="$PROJECT_DIR$/Day3/input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day3/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day3/Part1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771785041078</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add day3">
+      <option name="closed" value="true" />
+      <created>1771862077736</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1771862077736</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -219,6 +225,7 @@
     <MESSAGE value="add day1" />
     <MESSAGE value="finish day1 Part1.py" />
     <MESSAGE value="finish day1!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish day1!" />
+    <MESSAGE value="add day3" />
+    <option name="LAST_COMMIT_MESSAGE" value="add day3" />
   </component>
 </project>
