@@ -1,6 +1,6 @@
 from Util.util import read_input
 
-data = read_input(6,True)
+data = read_input(6,False)
 
 grid = []
 for lines in data:
@@ -119,6 +119,7 @@ while not isOut:
 
 result = 0
 for row in grid:
+    print(row)
     for col in row:
         if col == "X":
             result += 1
