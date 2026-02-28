@@ -1,6 +1,6 @@
 from Util.util import read_input
 
-data = read_input(8,False)
+data = read_input(8,True)
 signalMap = {}
 grid = []
 
@@ -19,7 +19,44 @@ for lines in data:
     row = []
     line = list(lines)
     for line in lines:
-        row.append(line)
+        mappedLine = False
+        row.append(mappedLine)
     grid.append(row)
 
-print(signalMap)
+result = 0
+
+for signal in signalMap:
+    for i in range(len(signalMap[signal])):
+        for j in range(i+1, len(signalMap[signal])):
+            if signalMap[signal][j][1] <= signalMap[signal][i][1]:
+                rightXcoor = signalMap[signal][i][0] - abs(signalMap[signal][j][0] - signalMap[signal][i][0])
+                rightYcoor = signalMap[signal][i][1] + abs(signalMap[signal][j][1] - signalMap[signal][i][1])
+                leftXcoor = signalMap[signal][j][0] + abs(signalMap[signal][j][0] - signalMap[signal][i][0])
+                leftYcoor = signalMap[signal][j][1] - abs(signalMap[signal][j][1] - signalMap[signal][i][1])
+
+                if -1 < leftXcoor < len(grid[0]) and -1 < leftYcoor < len(grid):
+                    if grid[leftXcoor][leftYcoor] == False:
+                        grid[leftXcoor][leftYcoor] = True
+                        result += 1
+                if -1 < rightXcoor < len(grid[0]) and -1 < rightYcoor < len(grid):
+                    if grid[rightXcoor][rightYcoor] == False:
+                        grid[rightXcoor][rightYcoor] = True
+                        result += 1
+
+            elif signalMap[signal][j][1] > signalMap[signal][i][1]:
+                rightXcoor = signalMap[signal][j][0] + abs(signalMap[signal][j][0] - signalMap[signal][i][0])
+                rightYcoor = signalMap[signal][j][1] + abs(signalMap[signal][j][1] - signalMap[signal][i][1])
+                leftXcoor = signalMap[signal][i][0] - abs(signalMap[signal][j][0] - signalMap[signal][i][0])
+                leftYcoor = signalMap[signal][i][1] - abs(signalMap[signal][j][1] - signalMap[signal][i][1])
+
+                if -1 < leftXcoor < len(grid[0]) and -1 < leftYcoor < len(grid):
+                    if grid[leftXcoor][leftYcoor] == False:
+                        grid[leftXcoor][leftYcoor] = True
+                        result += 1
+                if -1 < rightXcoor < len(grid[0]) and -1 < rightYcoor < len(grid):
+                    if grid[rightXcoor][rightYcoor] == False:
+                        grid[rightXcoor][rightYcoor] = True
+                        result += 1
+
+
+print(result)
