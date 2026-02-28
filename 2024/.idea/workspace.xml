@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day7">
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add Part2.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day7/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day7/Part1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day7/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day7/Part2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +352,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772218120269</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="finish Part1.py">
+      <option name="closed" value="true" />
+      <created>1772222612171</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1772222612171</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add Part2.py">
+      <option name="closed" value="true" />
+      <created>1772222627510</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1772222627510</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -361,7 +377,6 @@
     <MESSAGE value="finish day1 Part1.py" />
     <MESSAGE value="finish day1!" />
     <MESSAGE value="add day3" />
-    <MESSAGE value="finish Part1.py" />
     <MESSAGE value="finish day3!" />
     <MESSAGE value="add day4" />
     <MESSAGE value="finish day4 Part1.py" />
@@ -374,6 +389,8 @@
     <MESSAGE value="add day6 Part2.py" />
     <MESSAGE value="finish day6!" />
     <MESSAGE value="add day7" />
-    <option name="LAST_COMMIT_MESSAGE" value="add day7" />
+    <MESSAGE value="finish Part1.py" />
+    <MESSAGE value="add Part2.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Part2.py" />
   </component>
 </project>
