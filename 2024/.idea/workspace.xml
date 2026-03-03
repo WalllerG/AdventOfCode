@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add Part2.py">
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day13">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day12/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day12/Part1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day12/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day12/Part2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13/Part1.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/Part1.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13/input.txt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Stub" />
         <option value="Python Script" />
       </list>
     </option>
@@ -88,22 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00008" summary="finish day1!">
-      <option name="closed" value="true" />
-      <created>1771784681897</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1771784681897</updated>
-    </task>
-    <task id="LOCAL-00009" summary="finish day1!">
-      <option name="closed" value="true" />
-      <created>1771784741262</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1771784741262</updated>
     </task>
     <task id="LOCAL-00010" summary="finish day1!">
       <option name="closed" value="true" />
@@ -481,12 +467,26 @@
       <option name="project" value="LOCAL" />
       <updated>1772513802133</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="finish day12!">
+      <option name="closed" value="true" />
+      <created>1772554460543</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1772554460543</updated>
+    </task>
+    <task id="LOCAL-00058" summary="add day13">
+      <option name="closed" value="true" />
+      <created>1772554532752</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1772554532752</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finish day5!" />
-    <MESSAGE value="add day6" />
     <MESSAGE value="finish day6 Part1.py" />
     <MESSAGE value="add day6 Part2.py" />
     <MESSAGE value="finish day6!" />
@@ -510,7 +510,9 @@
     <MESSAGE value="add day12" />
     <MESSAGE value="finish day12 Part1.py" />
     <MESSAGE value="add Part2.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Part2.py" />
+    <MESSAGE value="finish day12!" />
+    <MESSAGE value="add day13" />
+    <option name="LAST_COMMIT_MESSAGE" value="add day13" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
