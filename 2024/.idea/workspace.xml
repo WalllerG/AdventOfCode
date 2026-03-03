@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish day11!">
-      <change afterPath="$PROJECT_DIR$/Day12/Part1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day12/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Day12/test.txt" afterDir="false" />
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day12">
+      <change beforePath="$PROJECT_DIR$/.idea/2024.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2024.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day12/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day12/Part1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "last_opened_file_path": "/Users/walter/Desktop/AdventOfCode/2024",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
@@ -78,7 +78,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
+        <option value="bundled-python-sdk-07523f343e4f-968fe969f28a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.28539.27" />
       </set>
     </attachedChunks>
   </component>
@@ -89,14 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00005" summary="finish day1 Part1.py">
-      <option name="closed" value="true" />
-      <created>1771782947551</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1771782947551</updated>
     </task>
     <task id="LOCAL-00006" summary="finish day1!">
       <option name="closed" value="true" />
@@ -482,11 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1772485241358</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="add day12">
+      <option name="closed" value="true" />
+      <created>1772488319772</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1772488319773</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finish day5 Part1.py" />
     <MESSAGE value="add part2" />
     <MESSAGE value="finish day5!" />
     <MESSAGE value="add day6" />
@@ -511,7 +510,8 @@
     <MESSAGE value="finish Part1.py" />
     <MESSAGE value="add Part2.py" />
     <MESSAGE value="finish day11!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish day11!" />
+    <MESSAGE value="add day12" />
+    <option name="LAST_COMMIT_MESSAGE" value="add day12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -525,6 +525,11 @@
           <url>file://$PROJECT_DIR$/Day8/Part2.py</url>
           <line>27</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Day12/Part1.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
