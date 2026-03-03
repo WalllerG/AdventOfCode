@@ -15,25 +15,27 @@ def findAllNeighbors(p):
     down = (p[0] + 1, p[1])
     left = (p[0], p[1] - 1)
     right = (p[0], p[1] + 1)
-    if -1 < p[0] - 1 < len(grid) and -1 < p[1] < len(grid[0]):
-        neighbors.append(up)
-    if -1 < p[0] + 1 < len(grid) and -1 < p[1] < len(grid[0]):
-        neighbors.append(down)
-    if -1 < p[0] < len(grid) and -1 < p[1] - 1 < len(grid[0]):
-        neighbors.append(left)
-    if -1 < p[0] < len(grid) and -1 < p[1] + 1 < len(grid[0]):
-        neighbors.append(right)
-
+    neighbors.append(up)
+    neighbors.append(down)
+    neighbors.append(left)
+    neighbors.append(right)
     return neighbors
+
+def is_inbounds(p):
+    return -1 < p[0] < len(grid) and -1 < p[1] < len(grid)
 
 def dfs(start):
     queue = [start]
     plant_type = grid[start[0]][start[1]]
     region = set()
+
     is_one = True
     while queue:
         current = queue.pop()
+
         for neighbor in findAllNeighbors(current):
+            if not is_inbounds(neighbor):
+                continue
             if neighbor not in region and grid[neighbor[0]][neighbor[1]] == plant_type:
                 region.add(neighbor)
                 queue.append(neighbor)
@@ -43,23 +45,43 @@ def dfs(start):
 
     return region
 
-def perimeter(s):
-    result = 0
-    for plant in s:
-        peri = 4
-        for neighbor in findAllNeighbors(plant):
-            if neighbor in s:
-                peri -= 1
-        result += peri
-    return result
+
+def sides (region_set):
+    corners = 0
+    directions = [
+        (-1, 0),  # Top
+        (0, 1),  # Right
+        (1, 0),  # Bottom
+        (0, -1)  # Left
+    ]
+
+    for r, c in region_set:
+        for i in range(4):
+            d1 = directions[i]
+            d2 = directions[(i + 1) % 4]
+
+            n1 = (r + d1[0], c + d1[1])
+            n2 = (r + d2[0], c + d2[1])
+            diag = (r + d1[0] + d2[0], c + d1[1] + d2[1])
+
+            if n1 not in region_set and n2 not in region_set:
+                corners += 1
+
+            if n1 in region_set and n2 in region_set and diag not in region_set:
+                corners += 1
+
+    return corners
+
+
 
 candidates = {(i,j) for i in range(len(grid)) for j in range(len(grid[i]))}
-
 while candidates:
-    region = dfs(candidates.pop())
+    start = candidates.pop()
+    region = dfs(start)
     candidates -= region
-    price += len(region) * perimeter(region)
+    price += sides(region) * len(region)
 
 print(price)
+
 
 

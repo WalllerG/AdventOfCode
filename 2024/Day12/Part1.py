@@ -9,47 +9,45 @@ for i in range(len(data)):
     lst = list(data[i])
     grid.append(lst)
 
-def findAllNeighbors(p):
+def findAllValidNeighbors(p):
     neighbors = []
+    plant_type = grid[p[0]][p[1]]
     up = (p[0] - 1, p[1])
     down = (p[0] + 1, p[1])
     left = (p[0], p[1] - 1)
     right = (p[0], p[1] + 1)
-    if -1 < p[0] - 1 < len(grid) and -1 < p[1] < len(grid[0]):
+    if -1 < up[0] < len(grid) and -1 < up[1] < len(grid[0]) and grid[up[0]][up[1]] == plant_type:
         neighbors.append(up)
-    if -1 < p[0] + 1 < len(grid) and -1 < p[1] < len(grid[0]):
+    if -1 < down[0] < len(grid) and -1 < down[1] < len(grid[0]) and grid[down[0]][down[1]] == plant_type:
         neighbors.append(down)
-    if -1 < p[0] < len(grid) and -1 < p[1] - 1 < len(grid[0]):
+    if -1 < left[0] < len(grid) and -1 < left[1] < len(grid[0]) and grid[left[0]][left[1]] == plant_type:
         neighbors.append(left)
-    if -1 < p[0] < len(grid) and -1 < p[1] + 1 < len(grid[0]):
+    if -1 < right[0] < len(grid) and -1 < right[1] < len(grid[0]) and grid[right[0]][right[1]] == plant_type:
         neighbors.append(right)
 
     return neighbors
 
 def dfs(start):
     queue = [start]
-    plant_type = grid[start[0]][start[1]]
     region = set()
-    is_one = True
     while queue:
         current = queue.pop()
-        for neighbor in findAllNeighbors(current):
-            if neighbor not in region and grid[neighbor[0]][neighbor[1]] == plant_type:
-                region.add(neighbor)
-                queue.append(neighbor)
-                is_one = False
-        if is_one:
+        if len(findAllValidNeighbors(current)) == 0:
             region.add(current)
+        else:
+            for neighbor in findAllValidNeighbors(current):
+                if neighbor not in region:
+                    region.add(neighbor)
+                    queue.append(neighbor)
 
     return region
 
-def perimeter(s):
+def perimeters(s):
     result = 0
     for plant in s:
         peri = 4
-        for neighbor in findAllNeighbors(plant):
-            if neighbor in s:
-                peri -= 1
+        for neighbor in findAllValidNeighbors(plant):
+             peri -= 1
         result += peri
     return result
 
@@ -58,7 +56,7 @@ candidates = {(i,j) for i in range(len(grid)) for j in range(len(grid[i]))}
 while candidates:
     region = dfs(candidates.pop())
     candidates -= region
-    price += len(region) * perimeter(region)
+    price += len(region) * perimeters(region)
 
 print(price)
 
