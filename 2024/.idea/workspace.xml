@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day13">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day13/Part1.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/Part1.pyi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day13/input.txt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day13/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13/Part1.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/Part1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day13/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day13/input.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Part1.executor": "Run",
+    "Python.Part1.executor": "Debug",
     "Python.Part2.executor": "Run",
     "Python.Util.executor": "Run",
     "Python.main.executor": "Run",
@@ -90,14 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00010" summary="finish day1!">
-      <option name="closed" value="true" />
-      <created>1771784907627</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1771784907627</updated>
     </task>
     <task id="LOCAL-00011" summary="finish day1!">
       <option name="closed" value="true" />
@@ -483,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772554532752</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="add day13">
+      <option name="closed" value="true" />
+      <created>1772555542895</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1772555542895</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -526,6 +525,11 @@
           <url>file://$PROJECT_DIR$/Day8/Part2.py</url>
           <line>27</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Day13/Part1.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
