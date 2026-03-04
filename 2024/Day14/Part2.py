@@ -21,22 +21,28 @@ class Tile:
 
         self.position = (new_x, new_y)
 
-data = read_input(14,test=True)
+data = read_input(14,True)
 
-grid = []
-for i in range(103):
-    row = []
-    for j in range(101):
-        row.append(0)
-    grid.append(row)
-
+robots = []
 for line in data:
     p_v = line.split()
     pos = list(map(int, re.findall(r"(-?\d+)", p_v[0])))
     vol = list(map(int, re.findall(r"(-?\d+)", p_v[1])))
-    tile = Tile(pos, vol)
-    for x in range(7502):
-        tile.move()
-    grid[tile.position[1]][tile.position[0]] += 1
+    robots.append(Tile(pos, vol))
+num_robots = len(robots)
+
+seconds = 0
+while True:
+    seconds += 1
+    robot_set = set()
+
+    for robot in robots:
+        robot.move()
+        robot_set.add(robot.position)
+
+    if len(robot_set) == num_robots:
+        print(f"Christmas Tree found at: {seconds}")
+        break
+
 
 
