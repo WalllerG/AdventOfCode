@@ -35,8 +35,34 @@ for line in data:
     pos = list(map(int, re.findall(r"(-?\d+)", p_v[0])))
     vol = list(map(int, re.findall(r"(-?\d+)", p_v[1])))
     tile = Tile(pos, vol)
-    for x in range(7502):
+    for x in range(100):
         tile.move()
     grid[tile.position[1]][tile.position[0]] += 1
 
+left_top = 0
+right_top = 0
+left_bottom = 0
+right_bottom = 0
+
+mid_x = 101 // 2
+mid_y = 103 // 2
+
+for y in range(103):
+    for x in range(101):
+        count = grid[y][x]
+        if count == 0: continue
+
+        if x == mid_x or y == mid_y:
+            continue
+
+        if x < mid_x and y < mid_y:
+            left_top += count
+        elif x > mid_x and y < mid_y:
+            right_top += count
+        elif x < mid_x and y > mid_y:
+            left_bottom += count
+        elif x > mid_x and y > mid_y:
+            right_bottom += count
+
+print(left_top * right_top * left_bottom * right_bottom)
 
