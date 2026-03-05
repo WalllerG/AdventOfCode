@@ -23,7 +23,7 @@ for i in range(len(data)):
 
 def solve_with_counts(maze, start, end):
     rows, cols = len(maze), len(maze[0])
-    pq = [(0, 0, 0, start[0], start[1], 0, 0)]
+    pq = [(0, 0, 0, start[0], start[1], 0, 1)]
     visited = {}
 
     while pq:
@@ -32,7 +32,7 @@ def solve_with_counts(maze, start, end):
         if (r, c) == end:
             return {"cost": cost, "turns": turns, "steps": steps}
 
-        for dr, dc in [ (0, 1), (1, 0),(0, -1), (-1, 0)]:
+        for dr, dc in [(0, 1), (-1, 0), (0, -1), (1, 0)]:
             nr, nc = r + dr, c + dc
 
             if 0 <= nr < rows and 0 <= nc < cols and maze[nr][nc] != "#":
