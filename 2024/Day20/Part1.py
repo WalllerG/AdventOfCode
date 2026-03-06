@@ -10,15 +10,15 @@ walls = set()
 ans = 0
 
 for i in range(len(data)):
-    r = list(data[i])
-    for j in range(len(r)):
-        if r[j] == "S":
+    coor = list(data[i])
+    for j in range(len(coor)):
+        if coor[j] == "S":
             s = (i,j)
-        elif r[j] == "E":
+        elif coor[j] == "E":
             e = (i,j)
-        elif r[j] == "#":
+        elif coor[j] == "#" and 0 < i < len(data)-1 and 0 < j < len(coor)-1:
             walls.add((i,j))
-    grid.append(r)
+    grid.append(coor)
 
 
 def solve_maze(maze, start, end):
@@ -47,12 +47,16 @@ def solve_maze(maze, start, end):
 
 
 origin = solve_maze(grid, s, e)
+
 for wall in walls:
-    new_grid = grid
-    new_grid[wall[0]][wall[1]] = "."
-    new_speed = solve_maze(new_grid, s, e)
+    x = wall[0]
+    y = wall[1]
+    grid[x][y] = "."
+    new_speed = solve_maze(grid, s, e)
     if new_speed < origin:
         save = origin - new_speed
         if save >= 100:
             ans += 1
+    grid[x][y] = "#"
+
 print(ans)
