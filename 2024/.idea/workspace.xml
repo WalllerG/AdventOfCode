@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day19">
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish Part1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day19/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/Part1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day19/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day19/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day19/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/Part2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Part1.executor": "Debug",
+    "Python.Part1.executor": "Run",
     "Python.Part2.executor": "Run",
     "Python.Util.executor": "Run",
     "Python.main.executor": "Run",
@@ -92,14 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00033" summary="finish day7!">
-      <option name="closed" value="true" />
-      <created>1772289387238</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1772289387238</updated>
     </task>
     <task id="LOCAL-00034" summary="add day8">
       <option name="closed" value="true" />
@@ -485,7 +475,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772808130375</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="finish Part1">
+      <option name="closed" value="true" />
+      <created>1772814265646</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1772814265646</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -505,7 +503,6 @@
     <MESSAGE value="add Part2.py" />
     <MESSAGE value="finish day15!" />
     <MESSAGE value="add day16" />
-    <MESSAGE value="finish Part1" />
     <MESSAGE value="finish day16!" />
     <MESSAGE value="add readme" />
     <MESSAGE value="add day17" />
@@ -514,7 +511,8 @@
     <MESSAGE value="finish day17!" />
     <MESSAGE value="finish day18!" />
     <MESSAGE value="add day19" />
-    <option name="LAST_COMMIT_MESSAGE" value="add day19" />
+    <MESSAGE value="finish Part1" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish Part1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -525,14 +523,9 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Day19/Part1.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Day19/Part1.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="27" />
+          <url>file://$PROJECT_DIR$/Day19/Part2.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
