@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish day18!" />
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add day19">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day19/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/Part1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day19/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day19/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day19/test.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +55,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.Part1.executor": "Run",
+    "Python.Part1.executor": "Debug",
     "Python.Part2.executor": "Run",
     "Python.Util.executor": "Run",
     "Python.main.executor": "Run",
@@ -87,14 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00032" summary="add Part2.py">
-      <option name="closed" value="true" />
-      <created>1772222627510</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1772222627510</updated>
     </task>
     <task id="LOCAL-00033" summary="finish day7!">
       <option name="closed" value="true" />
@@ -480,11 +477,18 @@
       <option name="project" value="LOCAL" />
       <updated>1772770897975</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="add day19">
+      <option name="closed" value="true" />
+      <created>1772808130375</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1772808130375</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finish day10!" />
     <MESSAGE value="add day11" />
     <MESSAGE value="add day11 Part1" />
     <MESSAGE value="finish day11!" />
@@ -509,7 +513,8 @@
     <MESSAGE value="add Part2" />
     <MESSAGE value="finish day17!" />
     <MESSAGE value="finish day18!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish day18!" />
+    <MESSAGE value="add day19" />
+    <option name="LAST_COMMIT_MESSAGE" value="add day19" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -518,6 +523,16 @@
           <url>file://$PROJECT_DIR$/Day8/Part2.py</url>
           <line>27</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Day19/Part1.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Day19/Part1.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
