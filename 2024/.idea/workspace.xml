@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="add Part2">
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish day17!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day17/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day17/Part2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day18/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day18/Part2.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +57,7 @@
     "Python.Part2.executor": "Run",
     "Python.Util.executor": "Run",
     "Python.main.executor": "Run",
-    "Python.test.executor": "Debug",
+    "Python.test.executor": "Run",
     "Python.util.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -90,14 +90,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00030" summary="add day7">
-      <option name="closed" value="true" />
-      <created>1772218120268</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1772218120269</updated>
     </task>
     <task id="LOCAL-00031" summary="finish Part1.py">
       <option name="closed" value="true" />
@@ -483,11 +475,18 @@
       <option name="project" value="LOCAL" />
       <updated>1772752507975</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="finish day17!">
+      <option name="closed" value="true" />
+      <created>1772766377200</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1772766377200</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add day10 Part1.py" />
     <MESSAGE value="finish day10 Part1.py" />
     <MESSAGE value="finish day10!" />
     <MESSAGE value="add day11" />
@@ -512,7 +511,8 @@
     <MESSAGE value="add day17" />
     <MESSAGE value="finish Part1.py" />
     <MESSAGE value="add Part2" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Part2" />
+    <MESSAGE value="finish day17!" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish day17!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
