@@ -60,11 +60,11 @@ def find_all_sequences(keyboard, start_coords, target_char):
     return all_shortest_paths
 
 
-def get_sequence(keyboard, code, start_pos):
+def get_sequence(keyboard, co, start_pos):
     current_pos = start_pos
     all_parts = []
 
-    for char in code:
+    for char in co:
         paths = find_all_sequences(keyboard, current_pos, char)
         all_parts.append(paths)
 
