@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish day21!">
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish Part1.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day22/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day22/Part1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day22/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day22/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day22/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day22/Part2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Day22/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day22/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,26 +51,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.Part1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Part2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Util.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.util.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/walter/Desktop/AdventOfCode/2024&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.Part1.executor": "Run",
+    "Python.Part2.executor": "Run",
+    "Python.Util.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.util.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/walter/Desktop/AdventOfCode/2024",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Day21" />
@@ -93,14 +92,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00040" summary="add day9 !">
-      <option name="closed" value="true" />
-      <created>1772338759333</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1772338759333</updated>
     </task>
     <task id="LOCAL-00041" summary="add day9 Part1.py">
       <option name="closed" value="true" />
@@ -486,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772859505872</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="finish Part1.py">
+      <option name="closed" value="true" />
+      <created>1772899019094</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1772899019094</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -504,7 +503,6 @@
     <MESSAGE value="finish day16!" />
     <MESSAGE value="add readme" />
     <MESSAGE value="add day17" />
-    <MESSAGE value="finish Part1.py" />
     <MESSAGE value="add Part2" />
     <MESSAGE value="finish day17!" />
     <MESSAGE value="finish day18!" />
@@ -515,7 +513,8 @@
     <MESSAGE value="fix" />
     <MESSAGE value="fix, and finish Part1.py" />
     <MESSAGE value="finish day21!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish day21!" />
+    <MESSAGE value="finish Part1.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish Part1.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
