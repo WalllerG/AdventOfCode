@@ -1,7 +1,7 @@
 
 from Util.util import read_input
 
-data = read_input(23,True)
+data = read_input(23,False)
 
 cache = {}
 for line in data:
@@ -18,7 +18,6 @@ for line in data:
     else:
         cache[l].append(r)
         cache[r].append(l)
-
 
 LAN = set()
 for comp in cache.keys():
