@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish year2024!">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,14 +89,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00047" summary="finish day10 Part1.py">
-      <option name="closed" value="true" />
-      <created>1772412473189</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1772412473189</updated>
     </task>
     <task id="LOCAL-00048" summary="finish day10!">
       <option name="closed" value="true" />
@@ -484,7 +474,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772943477706</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="fix">
+      <option name="closed" value="true" />
+      <created>1772984378682</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1772984378682</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -506,14 +504,14 @@
     <MESSAGE value="finish Part1" />
     <MESSAGE value="finish day19!" />
     <MESSAGE value="finish day20!" />
-    <MESSAGE value="fix" />
     <MESSAGE value="fix, and finish Part1.py" />
     <MESSAGE value="finish day21!" />
     <MESSAGE value="finish day22" />
     <MESSAGE value="finish Part1.py" />
     <MESSAGE value="finish day24!" />
     <MESSAGE value="finish year2024!" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish year2024!" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
