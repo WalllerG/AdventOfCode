@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish Part1.py">
+    <list default="true" id="f1566a4b-63b5-4874-8215-45d810440a7a" name="Changes" comment="finish day24!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day24/Part2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day24/Part2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day24/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day24/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day25/Part1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day25/Part1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day25/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day25/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Day25/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Day25/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,7 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.Part1.executor": "Run",
-    "Python.Part2.executor": "Debug",
+    "Python.Part2.executor": "Run",
     "Python.Util.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
@@ -93,22 +94,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1771735720130</updated>
-    </task>
-    <task id="LOCAL-00044" summary="finish day9!">
-      <option name="closed" value="true" />
-      <created>1772390902252</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1772390902253</updated>
-    </task>
-    <task id="LOCAL-00045" summary="add day10">
-      <option name="closed" value="true" />
-      <created>1772396013041</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1772396013041</updated>
     </task>
     <task id="LOCAL-00046" summary="add day10 Part1.py">
       <option name="closed" value="true" />
@@ -486,11 +471,26 @@
       <option name="project" value="LOCAL" />
       <updated>1772934675033</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="finish day24!">
+      <option name="closed" value="true" />
+      <created>1772941075173</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1772941075173</updated>
+    </task>
+    <task id="LOCAL-00094" summary="finish day24!">
+      <option name="closed" value="true" />
+      <created>1772941201442</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1772941201442</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add day13" />
     <MESSAGE value="finish day13 Part1.py" />
     <MESSAGE value="finish day13 Part2.py" />
     <MESSAGE value="add day 14" />
@@ -515,7 +515,8 @@
     <MESSAGE value="finish day21!" />
     <MESSAGE value="finish day22" />
     <MESSAGE value="finish Part1.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish Part1.py" />
+    <MESSAGE value="finish day24!" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish day24!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -524,11 +525,6 @@
           <url>file://$PROJECT_DIR$/Day08/Part2.py</url>
           <line>27</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Day24/Part2.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
