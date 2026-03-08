@@ -65,6 +65,10 @@ for i in range(0, len(data)-6, 8):
         for j in range(len(lst)):
             if lst[j] == "#":
                 val[j] += 1
+        lst = list(a)
+        for j in range(len(lst)):
+            if lst[j] == "#":
+                val[j] += 1
 
         keys.append(val)
 
