@@ -1,5 +1,4 @@
 import re
-
 from Util.util import read_input
 data = read_input(True)
 ans = 0
