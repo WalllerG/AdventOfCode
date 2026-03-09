@@ -1,5 +1,5 @@
 from Util.util import read_input
-data = read_input(5,False)
+data = read_input(True)
 
 seeds = [int(x) for x in data[0].split(": ")[-1].split(" ")]
 seed2soil = {}

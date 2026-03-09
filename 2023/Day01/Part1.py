@@ -1,5 +1,5 @@
 from Util.util import read_input
-data = read_input(1,True)
+data = read_input(True)
 
 ans =0
 

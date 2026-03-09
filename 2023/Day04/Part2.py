@@ -1,6 +1,6 @@
 from collections import defaultdict
 from Util.util import read_input
-data = read_input(4,True)
+data = read_input(True)
 
 cards = defaultdict(int)
 
