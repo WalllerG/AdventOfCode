@@ -3,7 +3,6 @@ data = read_input(True)
 
 grid = []
 s = ()
-points = set()
 for i in range(len(data)):
     row = list(data[i])
     for j in range(len(row)):
@@ -91,6 +90,4 @@ def findLoop(start):
                     queue.append(((nx, ny), grid[nx][ny], "up"))
                     length += 1
     return -1
-
 print(findLoop((s[0],s[1]-1)))
-

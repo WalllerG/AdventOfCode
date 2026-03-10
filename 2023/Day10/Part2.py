@@ -116,5 +116,3 @@ for i in range(len(grid)):
             if path.contains_point((i, j)):
                 ans += 1
 print(ans)
-
-

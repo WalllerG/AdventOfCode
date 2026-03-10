@@ -1,38 +1,23 @@
 with open("input.txt", "r") as file:
-    data = file.read()
+    data = file.read().strip()
 
 ans = 0
 for grid in data.split('\n\n'):
     rows = grid.split('\n')
-
-    r_for_row = 0
-    r_for_col = 0
-    is_row = False
-    for i in range(len(rows)-1):
-        last = rows[-1]
-        cur = rows[i]
-        if cur == last:
-            j = len(rows)-1
-            while i < j:
-                i += 1
-                j -= 1
-            r_for_row = i
-            ans += r_for_row * 100
-            break
+    for i in range(1, len(rows)):
+        top =  rows[:i]
+        bottom = rows[i:]
+        top_reverse = top[::-1]
+        if all(t == b for t, b in zip(top_reverse, bottom)):
+            ans += i * 100
 
     cols = list(zip(*rows))
-    for i in range(len(cols) - 1):
-        last = cols[-1]
-        cur = cols[i]
-        if cur == last:
-            j = len(cols) - 1
-            while i < j:
-                i += 1
-                j -= 1
-            r_for_col = i
-            ans += r_for_col
-            break
-
+    for c in range(1, len(cols)):
+        left = cols[:c]
+        right = cols[c:]
+        left_reverse = left[::-1]
+        if all(l == r for l, r in zip(left_reverse, right)):
+            ans += c
 
 print(ans)
 
