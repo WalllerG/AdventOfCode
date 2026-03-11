@@ -2,8 +2,6 @@ from Util.util import read_input
 import heapq
 data = read_input(True)
 grid = [list(line) for line in data]
-
-s = (0, 0)
 e = (len(grid)-1, len(grid[0])-1)
 
 def solve_maze(gr, end):
@@ -30,7 +28,6 @@ def solve_maze(gr, end):
             nr, nc = r + ndr, c + ndc
             if 0 <= nr < len(gr) and 0 <= nc < len(gr[0]):
                 heapq.heappush(pq, (loss + int(gr[nr][nc]), nr, nc, ndr, ndc, 1))
-
     return -1
 
 print(solve_maze(grid,e))

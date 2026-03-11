@@ -3,7 +3,6 @@ import heapq
 data = read_input(True)
 grid = [list(line) for line in data]
 
-s = (0, 0)
 e = (len(grid)-1, len(grid[0])-1)
 
 def solve_maze(gr, end):
