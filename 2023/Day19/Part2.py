@@ -1,44 +1,58 @@
-import functools
-from collections import defaultdict
-with open("test.txt") as f:
+with open("input.txt") as f:
     data = f.read()
-ans = 0
-p1, p2 = data.split("\n\n")
-condition_map = defaultdict(list)
-graph = defaultdict(list)
-def get_range(s):
-    if "<" in s:
-        return 1, int(s.split("<")[-1]) - 1
-    elif ">" in s:
-        return int(s.split(">")[-1]) + 1, 4000
-    return 1
+p1, _ = data.split("\n\n")
+workflows = {}
+
+for line in p1.split("\n"):
+    name, rest = line[:-1].split("{")
+    rules = rest.split(",")
+    workflows[name] = ([], rules.pop())
+    for rule in rules:
+        comparison, target = rule.split(":")
+        key = comparison[0]
+        comp = comparison[1]
+        num = int(comparison[2:])
+        workflows[name][0].append((key, comp, num, target))
 
 
-
-
-for workflow in p1.split("\n"):
-    workflow = workflow.strip("}")
-    a, conditions = workflow.split("{")
-    for condition in conditions.split(","):
-        graph[a].append(condition.split(":")[-1])
-        condition_map[a].append(condition.split(":")[0])
-
-
-@functools.lru_cache()
-def recursive(cur, result, range_map):
-
+def dfs(ranges, name = "in"):
     total = 0
-    if cur == "A":
-        return result
-    if cur == "R":
+    if name == "A":
+        product = 1
+        for l, h in ranges.values():
+            product *= h - l + 1
+        return product
+    if name == "R":
         return 0
 
-    for flow, cons in zip(graph[cur], condition_map[cur]):
-        new_range = get_range(cons)
-        total += recursive(flow, result * new_range)
+    rules, fallback = workflows[name]
+
+    for key, comp, num, target in rules:
+        l ,h = ranges[key]
+        if comp == "<":
+            T = (l, num-1)
+            F = (num, h)
+        else:
+            T = (num+1, h)
+            F = (l, num)
+        if T[0] <= T[1]:
+            copy = dict(ranges)
+            copy[key] = T
+            total += dfs(copy, target)
+        if F[0] <= F[1]:
+            ranges = dict(ranges)
+            ranges[key] = F
+        else:
+            break
+    else:
+        total += dfs(ranges, fallback)
+
     return total
 
-print(recursive("in", 1))
+print(dfs({key: (1,4000) for key in "xmas"}))
+
+
+
 
 
 
