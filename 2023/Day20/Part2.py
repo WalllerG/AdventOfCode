@@ -57,10 +57,7 @@ while True:
                     assert presses == seen[cur_mod] * cycle_length[cur_mod]
 
                 if all(seen.values()):
-                    x = 1
-                    for v in cycle_length.values():
-                        x = math.lcm(x, v)
-                    print(x)
+                    print(math.lcm(*[v for v in cycle_length.values()]))
                     exit(0)
 
         if type == "b":
@@ -96,4 +93,3 @@ while True:
                             if conjunction_memo[target][cur_mod]:
                                 conjunction_memo[target][cur_mod] = False
                     queue.append((target, 0))
-
