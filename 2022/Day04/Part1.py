@@ -7,7 +7,6 @@ def fully_contain(a, b):
     elif a[0] >= b[0] and a[1] <= b[1]:
         return True
     return False
-
 for line in data.split("\n"):
     s1,s2 = line.split(",")
     a = [int (x) for x in s1.split("-")]
