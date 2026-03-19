@@ -1,4 +1,5 @@
 import re
+from z3 import *
 with open("input.txt") as f:
     data = f.read().split("\n")
 sensors = {}
@@ -9,22 +10,19 @@ for line in data:
     sensor = (int(sx), int(sy))
     beacon = (int(bx), int(by))
     sensors[sensor] = beacon
-for val in sensors.values():
-    x, y = val
-    if y == 2000000:
-        no_beacons.add(val)
+solver = z3.Solver()
+x = Int("x")
+y = Int("y")
+solver.add(0 <= x)
+solver.add(0 <= y)
+solver.add(x <= 4000000)
+solver.add(y <= 4000000)
 for sensor, beacon in sensors.items():
     sx, sy = sensor
     bx, by = beacon
-    dis = abs(sx - bx) + abs(sy - by) - 1
-    dis2y = abs(sy - 2000000)
-    leftover = dis - dis2y
-    no_beacons.add((sx,2000000))
-    clx = sx
-    crx = sx
-    for _ in range(leftover):
-        clx -= 1
-        no_beacons.add((clx,2000000))
-    for _ in range(leftover):
-        crx += 1
-        no_beacons.add((crx,2000000))
+    dist = abs(sx - bx) + abs(sy - by)
+    dist_to_dis = abs(x - sx) + abs(y - sy)
+    solver.add(dist < dist_to_dis)
+if solver.check() == sat:
+    m = solver.model()
+    print(m[x].as_long() * 4000000 + m[y].as_long())
