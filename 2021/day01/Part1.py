@@ -5,4 +5,3 @@ for i in range(len(data)-1):
     if data[i+1] > data[i]:
         ans += 1
 print(ans)
-
