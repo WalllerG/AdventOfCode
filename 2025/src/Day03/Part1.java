@@ -1,6 +1,6 @@
 package Day3;
 
-import advent.util.Util;
+import advent.util.Util
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
