@@ -27,7 +27,7 @@ queue = collections.deque([0])
 
 while queue:
     ref_idx = queue.popleft()
-    ref_beacons = [p for p in fixed_beacons] # Beacons already in global coord system
+    ref_beacons = [p for p in fixed_beacons]
 
     for i in range(len(scanners)):
         if i in aligned_indices: continue
